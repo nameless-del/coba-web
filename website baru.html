@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Elegan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+body {
+    background: url('gunung.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Baskerville', sans-serif;
+}
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Gaya untuk Header */
+header {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 2em;
+}
+
+/* Gaya untuk Menu Navigasi */
+nav ul {
+    list-style-type: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    overflow: hidden;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Gaya untuk Jumbotron */
+.jumbotron img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0.8;
+    border-radius: 0 0 20px 20px;
+}
+
+/* Gaya untuk Isi Konten */
+main .content {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #c6ffdd, #fbd786, #f7797d);
+    border-radius: 20px;
+    margin: 20px;
+    color: #333;
+}
+
+main .content h2 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+main .content p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+/* Gaya untuk Galeri Gambar */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk Footer */
+footer {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 20px 20px 0 0;
+    font-size: 1em;
+
+</style>
+  
+        <img height="50" width="50" src="logo.png" alt="logo sekolah">
+
+<body>
+    <!-- Header -->
+    
+
+    <!-- Menu Navigasi -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Hamburger dengan Submenu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #f0f0f0;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #f0f0f0;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #1a1a1a;
+            padding: 10px;
+        }
+        .menu.show {
+            display: flex;
+        }
+        .menu a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .menu a:hover {
+            background-color: #333;
+        }
+        .menu-item {
+            position: relative;
+            padding: 10px;
+            left: -10px
+        }
+        .submenu {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            margin-left: 20px;
+            border-left: 2px solid #555;
+           
+        }
+        .submenu.show {
+            display: flex;
+        }
+        .submenu a {
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MyWebsite</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="website baru.html">Home</a>
+        <a href="biodata.html">Tentangku</a>
+        <div class="menu-item">
+            <a href="#" onclick="toggleSubmenu(event)">Materi</a>
+            <div class="submenu" id="submenu">
+                <a href="Bab 1.html">Bab 1</a>
+                <a href="Bab 2.html">Bab 2</a>
+                <a href="Bab 3.html">Bab 3</a>
+            </div>
+        </div>
+             <div class="menu-item">
+            <a href="#" onclick="toggleProyekSubmenu(event)">Proyek</a>
+            <div class="submenu" id="proyek submenu">
+                <a href="arduino.html">Proyek Arduino Trafficlight</a>
+                <a href="buzzer.html">Proyek Buzzer</a>
+                <a href="servo.html">Proyek Servo</a>
+            </div>
+        </div>
+          <a href="biodata.html">Proyek P5</a>
+    </div>
+      
+    <header>
+        <h1>Welcome to my website</h1>
+      <style>
+      h1{
+        color:#00FF00;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      </style>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+
+        function toggleSubmenu(event) {
+            event.preventDefault(); // Mencegah tautan default
+            const submenu = document.getElementById('submenu');
+            submenu.classList.toggle('show');
+        }
+        
+        function toggleProyekSubmenu(event) {
+            event.preventDefault(); // Mencegah tautan default
+            const proyekSubmenu = event.target.nextElementSibling; // Mengambil submenu Proyek
+            proyekSubmenu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
+
+    <!-- Isi Konten -->
+    <main>
+        <section class="content">
+            <h2>Apa itu Informatika?</h2>
+            <p>Informatika adalah ilmu yang mempelajari tentang penggunaan komputer untuk mengatur dan menganalisis data yang berukuran besar, baik data maupun informasi pada mesin berbasis komputasi. Informatika juga mencakup studi, perancangan, dan pembuatan sistem komputasi dasar yang dapat memproses dan menyajikan informasi secara efektif dan efisien.</p>
+        </section>
+        
+    <!-- Link ke file CSS eksternal -->
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi informatika</title>
+  <style>
+  
+       .gallery img {
+            width: 100px; /* Lebar gambar */
+            height: 180px; /* Tinggi gambar */
+            object-fit: cover; /* Menjaga gambar tetap proporsional */
+            border-radius: 10px; /* Sudut membulat pada gambar */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery a:hover img {
+            transform: scale(1.05); /* Efek zoom saat hover */
+          {
+    </style>
+</head>
+<body>
+  <h3>Materi informatika</h1>
+  <style>
+  h3{
+  color :  #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  }
+  </style>
+     <section class="gallery">
+        <a href="Bab 1.html">
+            <img src="bab 1.jpg" alt="Gambar 1">
+        </a>
+        <a href="Bab 2.html">
+            <img src="bab 2.jpg" alt="Gambar 2">
+        </a>
+        <a href="Bab 3.html">
+            <img src="bab 3.jpg" alt="Gambar 3">
+        </a>
+    </section>
+
+</body>
+</html>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Website Kami. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>

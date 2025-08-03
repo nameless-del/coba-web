@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Arduino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+        h2 {
+            color: #3498db;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Proyek Servo</h1>
+
+    <div class="section">
+        <h2>Deskripsi Proyek</h2>
+        <p>Proyek ini bertujuan untuk mengendalikan pergerakan motor servo menggunakan dua tombol sederhana. Servo akan bergerak ke posisi 90 derajat ketika tombol pertama ditekan dan akan kembali ke posisi 0 derajat saat tombol kedua ditekan. Proyek ini cocok untuk pembelajaran dasar mikrokontroler dan aktuator sederhana, serta dapat dikembangkan menjadi sistem kontrol yang lebih kompleks.</p>
+    </div>
+    <div class="section">
+        <h2>Komponen yang Dibutuhkan</h2>
+        <ul>
+            <li>1 Arduino (Uno, Mega, dsb.)</li>
+            <li>Servo motor</li>
+            <li>Dua tombol</li>
+            <li>Kabel jumper</li>
+        </ul>
+    </div>
+  
+  <h2 id="sejarah" >Gambar arduino traffic light</h2>
+        <img height="500" width="350" src="servo dua tombol.jpg" alt="Arduino traffic light">
+
+    <div class="section">
+        <h2>Kode Arduino</h2>
+        <pre><code>
+#include <.Servo.h>  // Memasukkan pustaka Servo
+
+Servo servoMotor;   // Membuat objek servo
+
+const int pinButton90 = 7;    // Pin untuk tombol pertama (90 derajat)
+const int pinButton0 = 8;     // Pin untuk tombol kedua (0 derajat)
+const int posisiAwal = 0;     // Posisi awal servo (0 derajat)
+const int posisiTujuan = 90;  // Posisi tujuan servo (90 derajat)
+
+void setup() {
+  servoMotor.attach(9);            // Menghubungkan servo ke pin digital 9
+  pinMode(pinButton90, INPUT_PULLUP); // Mengatur tombol 90 derajat sebagai input dengan pull-up internal
+  pinMode(pinButton0, INPUT_PULLUP);  // Mengatur tombol 0 derajat sebagai input dengan pull-up internal
+  servoMotor.write(posisiAwal);     // Menetapkan posisi awal servo
+}
+
+void loop() {
+  if (digitalRead(pinButton90) == LOW) {  // Jika tombol 90 derajat ditekan
+    servoMotor.write(posisiTujuan);       // Menggerakkan servo ke posisi 90 derajat
+  } 
+  else if (digitalRead(pinButton0) == LOW) { // Jika tombol 0 derajat ditekan
+    servoMotor.write(posisiAwal);         // Mengembalikan servo ke posisi 0 derajat
+  }
+}
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Cara Kerja</h2>
+        <ol>
+          <li>Tombol pertama (pin 7) menggerakkan servo ke posisi 90 derajat.</li>
+          <li>Tombol kedua (pin 8) mengembalikan servo ke posisi 0 derajat.</li>
+        </ol>
+    </div>
+
+      <a href="website baru.html">
+    <button>Kembali ke Halaman Utama</button>
+    <style>
+        /* Mengatur hanya lebar dan tinggi tombol */
+        button {
+            width: 100px; /* lebar tombol */
+            height: 50px; /* tinggi tombol */
+            background-color: #3498db;
+            color: #FFF;
+        }
+    </style>
+      </a>
+
+</body>
+</html>

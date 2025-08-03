@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Buzzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+        h2 {
+            color: #3498db;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lagu Cicak Cicak Di Dinding</h1>
+
+    <div class="section">
+        <h2>Deskripsi Proyek</h2>
+        <p>Proyek ini menggunakan Arduino dan buzzer untuk memainkan lagu "Cicak-Cicak di Dinding". Proyek ini sederhana dan ideal untuk pemula yang ingin mempelajari pengendalian suara pada Arduino. Buzzer akan menghasilkan suara sesuai dengan nada lagu yang telah dikodekan dalam program.</p>
+    </div>
+    <div class="section">
+        <h2>Komponen yang Dibutuhkan</h2>
+        <ul>
+            <li>1 Arduino (Uno, Mega, dsb.)</li>
+            <li>1 buzzer</li>
+            <li>Kabel jumper</li>
+        </ul>
+    </div>
+  
+  <h2 id="sejarah" >Gambar arduino buzzer</h2>
+        <img height="500" width="350" src="buzzer.jpg" alt="Arduino traffic light">
+
+    <div class="section">
+        <h2>Kode Arduino</h2>
+        <pre><code>
+// Definisi frekuensi untuk setiap nada
+#define NOTE_C4  262
+#define NOTE_D4  294
+#define NOTE_E4  330
+#define NOTE_F4  349
+#define NOTE_G4  392
+#define NOTE_A4  440
+#define NOTE_B4  494
+#define NOTE_C5  523
+
+// Melodi lagu "Cicak-cicak di Dinding" sesuai notasi dari gambar
+int melody[] = {
+  NOTE_G4, NOTE_E4, NOTE_G4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_G4, // Cicak-cicak di dinding
+  NOTE_F4, NOTE_D4, NOTE_F4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4, // Diam-diam merayap
+  NOTE_A4, NOTE_F4, NOTE_A4, NOTE_F4, NOTE_A4, NOTE_B4, NOTE_C5, // Datang seekor nyamuk
+  NOTE_C5,                                                      // Hap
+  NOTE_E4, NOTE_G4, NOTE_F4, NOTE_D4, NOTE_C4                   // Lalu ditangkap
+};
+
+// Durasi setiap nada (4 = seperempat, 8 = seperdelapan, dll.)
+int noteDurations[] = {
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8, 8, 8, 4,
+  2,
+  8, 8, 8, 8, 4
+};
+
+void setup() {
+  // Memainkan setiap nada dalam melodi
+  for (int thisNote = 0; thisNote < 27; thisNote++) {
+    int noteDuration = 1000 / noteDurations[thisNote];
+    tone(1, melody[thisNote], noteDuration);
+
+    // Jeda antar nada
+    int pauseBetweenNotes = noteDuration * 1.6;
+    delay(pauseBetweenNotes);
+
+    // Menghentikan nada
+    noTone(1);
+  }
+}
+
+void loop() {
+  // Tidak perlu mengulang lagu
+}
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Cara Kerja</h2>
+        <ol>
+          <li>Nada: Nada-nada dari lagu "Cicak-Cicak di Dinding" disimpan dalam array</li>
+          <li>Durasi: Setiap nada memiliki durasi yang sama, disimpan dalam array</li>
+          <li>Fungsi tone(): Digunakan untuk menghasilkan suara pada buzzer dengan frekuensi yang ditentukan.</li>
+          <li>Perulangan: for loop digunakan untuk memainkan nada satu per satu sesuai durasi yang ditentukan.</li>
+        </ol>
+    </div>
+
+      <a href="website baru.html">
+    <button>Kembali ke Halaman Utama</button>
+    <style>
+        /* Mengatur hanya lebar dan tinggi tombol */
+        button {
+            width: 100px; /* lebar tombol */
+            height: 50px; /* tinggi tombol */
+            background-color: #3498db;
+            color: #FFF;
+        }
+    </style>
+      </a>
+
+</body>
+</html>

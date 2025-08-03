@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Arduino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+        h2 {
+            color: #3498db;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ARDUINO TRAFFIC LIGHT</h1>
+
+    <div class="section">
+        <h2>Deskripsi Proyek</h2>
+        <p>Proyek ini adalah simulasi lampu lalu lintas di sebuah perempatan menggunakan Arduino dengan 12 LED, masing-masing 4 untuk setiap warna (merah, kuning, hijau). Lampu akan menyala secara bergantian untuk 4 arah, menggambarkan perilaku lampu lalu lintas yang sebenarnya.</p>
+    </div>
+
+    <div class="section">
+        <h2>Komponen yang Dibutuhkan</h2>
+        <ul>
+            <li>1 Arduino (Uno, Mega, dsb.)</li>
+            <li>12 LED (4 merah, 4 kuning, 4 hijau)</li>
+            <li>Kabel jumper</li>
+            <li>12 resistor</li>
+        </ul>
+    </div>
+  
+  <h2 id="sejarah" >Gambar arduino traffic light</h2>
+        <img height="300" width="350" src="arduino.jpg" alt="Arduino traffic light">
+
+    <div class="section">
+        <h2>Kode Arduino</h2>
+        <pre><code>
+// Definisi pin untuk lampu LED tiap arah
+int redN = 2, yellowN = 3, greenN = 4;     // Utara
+int redE = 5, yellowE = 6, greenE = 7;     // Timur
+int redS = 8, yellowS = 9, greenS = 10;    // Selatan
+int redW = 11, yellowW = 12, greenW = 13;  // Barat
+
+void setup() {
+    // Atur semua pin LED sebagai output
+    pinMode(redN, OUTPUT);
+    pinMode(yellowN, OUTPUT);
+    pinMode(greenN, OUTPUT);
+    pinMode(redE, OUTPUT);
+    pinMode(yellowE, OUTPUT);
+    pinMode(greenE, OUTPUT);
+    pinMode(redS, OUTPUT);
+    pinMode(yellowS, OUTPUT);
+    pinMode(greenS, OUTPUT);
+    pinMode(redW, OUTPUT);
+    pinMode(yellowW, OUTPUT);
+    pinMode(greenW, OUTPUT);
+}
+
+void loop() {
+    // Lampu Hijau untuk Utara dan Selatan, Merah untuk Timur dan Barat
+    digitalWrite(greenN, HIGH);
+    digitalWrite(greenS, HIGH);
+    digitalWrite(redE, HIGH);
+    digitalWrite(redW, HIGH);
+    delay(5000); // Hijau untuk 5 detik
+
+    // Kuning untuk Utara dan Selatan
+    digitalWrite(greenN, LOW);
+    digitalWrite(greenS, LOW);
+    digitalWrite(yellowN, HIGH);
+    digitalWrite(yellowS, HIGH);
+    delay(2000); // Kuning untuk 2 detik
+
+    // Merah untuk Utara dan Selatan, Hijau untuk Timur dan Barat
+    digitalWrite(yellowN, LOW);
+    digitalWrite(yellowS, LOW);
+    digitalWrite(redN, HIGH);
+    digitalWrite(redS, HIGH);
+    digitalWrite(greenE, HIGH);
+    digitalWrite(greenW, HIGH);
+    digitalWrite(redE, LOW);
+    digitalWrite(redW, LOW);
+    delay(5000); // Hijau untuk 5 detik
+
+    // Kuning untuk Timur dan Barat
+    digitalWrite(greenE, LOW);
+    digitalWrite(greenW, LOW);
+    digitalWrite(yellowE, HIGH);
+    digitalWrite(yellowW, HIGH);
+    delay(2000); // Kuning untuk 2 detik
+
+    // Ulangi siklus
+    digitalWrite(yellowE, LOW);
+    digitalWrite(yellowW, LOW);
+    digitalWrite(redE, HIGH);
+    digitalWrite(redW, HIGH);
+    digitalWrite(redN, LOW);
+    digitalWrite(redS, LOW);
+}
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Cara Kerja</h2>
+        <ol>
+          <li>Utara & Selatan Hijau, Timur & Barat Merah : Arah Utara dan Selatan mendapat lampu hijau selama 5 detik, sehingga kendaraan di arah tersebut bisa melintas.Arah Timur dan Barat mendapat lampu merah, kendaraan harus berhenti</li>
+          <li>Utara & Selatan Kuning : Setelah 5 detik, lampu hijau Utara dan Selatan berubah menjadi kuning selama 2 detik sebagai peringatan bahwa lampu akan berubah menjadi merah.</li>
+          <li>Utara & Selatan Merah, Timur & Barat Hijau : Arah Utara dan Selatan berubah menjadi merah, sementara arah Timur dan Barat mendapat lampu hijau selama 5 detik, memberi kesempatan kendaraan Timur-Barat untuk melintas.</li>
+          <li>Timur & Barat Kuning : Setelah 5 detik, lampu hijau Timur dan Barat berubah menjadi kuning selama 2 detik sebagai peringatan.</li>
+        </ol>
+    </div>
+
+      <a href="website baru.html">
+    <button>Kembali ke Halaman Utama</button>
+    <style>
+        /* Mengatur hanya lebar dan tinggi tombol */
+        button {
+            width: 100px; /* lebar tombol */
+            height: 50px; /* tinggi tombol */
+            background-color: #3498db;
+            color: #FFF;
+        }
+    </style>
+      </a>
+
+</body>
+</html>
