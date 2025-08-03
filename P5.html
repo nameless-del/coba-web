@@ -1,36 +1,111 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyek Penyiram Tanaman Otomatis - Kelompok 3 XII-C2 SMA Negeri 2 Mojokerto</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyek Penyiram Tanaman Otomatis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2e7d32;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #388e3c;
+      margin-top: 30px;
+    }
+
+    p, li {
+      font-size: 1.05rem;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #388e3c;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #2e7d32;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>Proyek Penyiram Tanaman Otomatis</h1>
     <h2>Kelompok 3, Kelas XII-C2, SMA Negeri 2 Mojokerto</h2>
-    
-    <!-- Gambar Proyek -->
-    <img src="proyek p5.jpg" alt="Gambar Penyiram Tanaman Otomatis" width="300">
+    <img src="proyek p5.jpg" alt="Gambar Penyiram Tanaman Otomatis" />
 
     <p>Kami, kelompok 3 dari kelas XII-C2 SMA Negeri 2 Mojokerto, mengembangkan penyiram tanaman otomatis sebagai bagian dari proyek Penguatan Profil Pelajar Pancasila (P5). Proyek ini bertujuan untuk memanfaatkan teknologi sederhana dalam membantu masyarakat menyiram tanaman secara efisien.</p>
-    
+
     <h2>Apa Itu P5?</h2>
     <p>P5 atau Penguatan Profil Pelajar Pancasila adalah program pembelajaran lintas disiplin ilmu. Tujuan utamanya adalah meningkatkan kompetensi siswa dalam menghadapi tantangan nyata, mengamati masalah lingkungan, dan menerapkan solusi kreatif. Dalam proyek ini, kami fokus pada inovasi teknologi ramah lingkungan.</p>
-    
+
     <h2>Teknologi yang Digunakan</h2>
     <p>Dalam proyek penyiram tanaman otomatis ini, kami menggunakan beberapa komponen teknologi utama, yaitu:</p>
     <ul>
-        <li><strong>Arduino Uno</strong>: Sebagai pengendali utama sistem.</li>
-        <li><strong>Sensor Kelembapan Tanah</strong>: Mendeteksi tingkat kelembapan tanah.</li>
-        <li><strong>Pompa Air 5V</strong>: Mengalirkan air secara otomatis.</li>
-        <li><strong>Relay Modul</strong>: Mengatur aliran listrik ke pompa.</li>
+      <li><strong>Arduino Uno</strong>: Sebagai pengendali utama sistem.</li>
+      <li><strong>Sensor Kelembapan Tanah</strong>: Mendeteksi tingkat kelembapan tanah.</li>
+      <li><strong>Pompa Air 5V</strong>: Mengalirkan air secara otomatis.</li>
+      <li><strong>Relay Modul</strong>: Mengatur aliran listrik ke pompa.</li>
     </ul>
     <p>Dengan kombinasi komponen ini, alat dapat bekerja secara otomatis untuk menjaga tanaman tetap terhidrasi tanpa memerlukan perhatian terus-menerus.</p>
-    
+
     <h2>Manfaat dan Harapan</h2>
     <p>Proyek ini tidak hanya membantu mengatasi masalah penyiraman tanaman, tetapi juga mendukung efisiensi air dan energi. Kami berharap inovasi ini dapat menginspirasi masyarakat untuk memanfaatkan teknologi sederhana dalam kehidupan sehari-hari, sekaligus mendukung keberlanjutan lingkungan.</p>
-  <a href="website baru.html" style="padding: 10px 10px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Kembali ke Halaman Utama</a>
 
+    <a href="website baru.html" class="button">Kembali ke Halaman Utama</a>
+  </div>
 </body>
 </html>
+
